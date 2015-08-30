@@ -1,30 +1,33 @@
-Root pour la Google TV de SFR
+Root pour le stb_dvb_sfr
 ======
 
-Si vous voulez rooter votre Google TV, vous pouvez dès maintenant suivre ces instructions.
-Ce root consiste à flasher une update contenant le binaire de su,
-ainsi qu'un script désactivant la réinstallation de la recovery (pour mettre un custom recovery).
+Le stb_dvb_sfr, plus connu sous le nom de **décodeur Google Play de SFR** est une Google Tv qui est maintenant plus supporté.
+
+Si vous voulez rooter votre décodeur, vous pouvez dès maintenant suivre ces instructions.
+Ce root consiste à flasher une update dans le recovery contenant le binaire de su,
+et désactive également la réinstallation de la recovery (pour mettre un custom recovery).
 
 Vous avez juste besoin d'un pc avec [ADB](http://forum.frandroid.com/topic/143999-tuto-installation-adb/).
 
 ## Credit
 
 Je remercis le créateur de [ioroot](http://forum.xda-developers.com/showpost.php?p=48709232&postcount=869), a créé **datroot**, 
-que j'ai très légèrement modifier pour fonctionner sur la recovery de la Google TV de SFR.
+que j'ai très légèrement modifier pour fonctionner sur cet appareil.
 
 ## Etape 0 : Avertissement
 
-Ce script a été testé sur ma propre Google TV par SFR, et marche très bien. Mais il se peut que sur votre Google TV par SFR, la configuration du stockage soit différent et mène ainsi à un brick lors du flash.
+Ce script a été testé sur mon propre décodeur, et marche très bien.
+Mais il se peut que sur votre décodeur, la configuration du stockage soit différent et mène ainsi à un brick lors du flash.
 
 Ainsi, avant de flasher le zip, vérifiez que :
-- Vous avez bien une **Google TV SFR-G8800**,
+- Vous avez bien une **Google TV SFR-G8800**, modèle SZ930T,
 - Vous êtes bien sur la dernière mise à jour (4.2.2 build **JDQ39**, logiciel SFR.02412.07729),
 - Vous avez une connexion stable wifi / ethernet et que votre PC et sur le même réseau (pour adb),
 
 ## Etape 1 : shell adb
-Pour utiliser adb, il faut activer le mode développeur sur votre Google TV, puis activer le débogage USB.
+Pour utiliser adb, il faut activer le mode développeur, puis activer le débogage USB dans les paramètres.
 
-Pour activer adb, vous avec besoin d'un terminal sur la Google TV. Vous pouvez installer celui-ci : [Terminal Emulator](https://play.google.com/store/apps/details?id=jackpal.androidterm&hl=fr).
+Vous avec besoin d'un terminal sur le décodeur pour configurer le serveur adb. Vous pouvez installer celui-ci : [Terminal Emulator](https://play.google.com/store/apps/details?id=jackpal.androidterm&hl=fr).
 
 Pour activer adb par le réseau, ouvrez un terminal sur Android et tapez : 
 * setprop service.adb.tcp.port 5555
@@ -34,8 +37,15 @@ Pour activer adb par le réseau, ouvrez un terminal sur Android et tapez :
 Ensuite, connectez-vous avec un ordinateur dessus avec adb :
 * adb connect <ip réseau>
 
-Ensuite vérifier que "**adb shell mount**" contient bien "*/dev/block/mmcblk0p6 /system ext4 ro,relatime,data=ordered 0 0*".
-Si le nombre après mmcblk0p change, alors NE FLASHER SURTOUT PÄS, car le script s'installerait alors autre pas que sur le système Android.
+Ensuite vérifier que "**adb shell mount**" contient bien :
+```
+/dev/block/mmcblk0p6 /system ext4 ro,relatime,data=ordered 0 0
+```
+
+Si le nombre après mmcblk0p change, alors **NE FLASHER SURTOUT PAS**, car le script s'installerait alors autre pas que sur le système Android.
+
+*En cas de brick, je ne suis pas responsable. Bla, bla... Mais sachez que si vous ne bottez plus sur Android,
+je ne connais aucune autre méthode pour retourner dans la recovery et flasher le firmware de base.*
 
 ## Etape 1 : préparation d'une clé USB et boot en recovery
 
