@@ -17,8 +17,15 @@ Ainsi, avant de flasher le zip, vérifiez que :
 ## Etape 1 : shell adb
 Pour utiliser adb, il faut activer le mode développeur sur votre Google TV, puis activer le débogage USB.
 
-Récupérez l'IP de la Google TV et connectez-vous dessus avec adb :
-* adb connect <IP>
+Pour activer adb, vous avec besoin d'un terminal sur la Google TV. Vous pouvez installer celui-ci : [Terminal Emulator](https://play.google.com/store/apps/details?id=jackpal.androidterm&hl=fr).
+
+Pour activer adb par le réseau, ouvrez un terminal sur Android et tapez : 
+* setprop service.adb.tcp.port 5555
+* stop adbd
+* start adbd
+
+Ensuite, connectez-vous avec un ordinateur dessus avec adb :
+* adb connect <ip réseau>
 
 Ensuite vérifier que "**adb shell mount**" contient bien "*/dev/block/mmcblk0p6 /system ext4 ro,relatime,data=ordered 0 0*".
 Si le nombre après mmcblk0p change, alors NE FLASHER SURTOUT PÄS, car le script s'installerait alors autre pas que sur le système Android.
