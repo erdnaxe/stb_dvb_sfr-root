@@ -3,6 +3,15 @@ Root pour le stb_dvb_sfr
 
 Le stb_dvb_sfr, plus connu sous le nom de **décodeur Google Play de SFR** est une Google Tv qui est maintenant plus supporté.
 
+# Informations
+
+Ces informations peuvent être utiles pour un futur développement d'une rom (CyanogenMod...) sur le décodeur.
+
+* [Table des partitions et leur contenu extrait des logs de la recovery](RECOVERY_FILESYSTEM_TABLE.md),
+* [Accès à une partie du code source](http://opensource.lge.com/fileMgr/download/op/SZ930T-HF/5360) sous license opensource (ne sert à rien pour une custom rom).
+
+# Root du décodeur
+
 Si vous voulez rooter votre décodeur, vous pouvez dès maintenant suivre ces instructions.
 Ce root consiste à flasher une update dans le recovery contenant le binaire de su,
 et désactive également la réinstallation de la recovery (pour mettre un custom recovery).
@@ -11,7 +20,7 @@ Vous avez juste besoin d'un pc avec [ADB](http://forum.frandroid.com/topic/14399
 
 ## Credit
 
-Je remercis le créateur de [ioroot](http://forum.xda-developers.com/showpost.php?p=48709232&postcount=869), a créé **datroot**, 
+Je remercis le créateur de [ioroot](http://forum.xda-developers.com/showpost.php?p=48709232&postcount=869), qui a créé **datroot**, 
 que j'ai très légèrement modifier pour fonctionner sur cet appareil.
 
 ## Etape 0 : Avertissement
@@ -20,9 +29,9 @@ Ce script a été testé sur mon propre décodeur, et marche très bien.
 Mais il se peut que sur votre décodeur, la configuration du stockage soit différent et mène ainsi à un brick lors du flash.
 
 Ainsi, avant de flasher le zip, vérifiez que :
-- Vous avez bien une **Google TV SFR-G8800**, modèle SZ930T,
-- Vous êtes bien sur la dernière mise à jour (4.2.2 build **JDQ39**, logiciel SFR.02412.07729),
-- Vous avez une connexion stable wifi / ethernet et que votre PC et sur le même réseau (pour adb),
+* Vous avez bien une **Google TV SFR-G8800**, modèle SZ930T,
+* Vous êtes bien sur la dernière mise à jour (4.2.2 build **JDQ39**, logiciel SFR.02412.07729),
+* Vous avez une connexion stable wifi / ethernet et que votre PC et sur le même réseau (pour adb),
 
 ## Etape 1 : shell adb
 Pour utiliser adb, il faut activer le mode développeur, puis activer le débogage USB dans les paramètres.
