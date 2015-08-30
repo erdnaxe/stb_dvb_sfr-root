@@ -5,6 +5,13 @@ Si vous voulez rooter votre Google TV, vous pouvez dès maintenant suivre ces ins
 Ce root consiste à flasher une update contenant le binaire de su,
 ainsi qu'un script désactivant la réinstallation de la recovery (pour mettre un custom recovery).
 
+Vous avez juste besoin d'un pc avec [ADB](http://forum.frandroid.com/topic/143999-tuto-installation-adb/).
+
+## Credit
+
+Je remercis le créateur de [ioroot](http://forum.xda-developers.com/showpost.php?p=48709232&postcount=869), a créé **datroot**, 
+que j'ai très légèrement modifier pour fonctionner sur la recovery de la Google TV de SFR.
+
 ## Etape 0 : Avertissement
 
 Ce script a été testé sur ma propre Google TV par SFR, et marche très bien. Mais il se peut que sur votre Google TV par SFR, la configuration du stockage soit différent et mène ainsi à un brick lors du flash.
