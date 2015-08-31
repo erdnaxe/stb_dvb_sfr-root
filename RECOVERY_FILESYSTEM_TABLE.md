@@ -1,7 +1,7 @@
 Recovery filesystem table
 ======
 
-Ces données ont été trouvé dans **mmcblk0p7**, dans un fichier de log de la recovery.
+Ces données ont été trouvées dans **mmcblk0p7**, dans un fichier de log de la recovery.
 ```
 0 /tmp ramdisk (null) (null) 0
 1 /sdcard vfat /dev/block/sda1 /dev/block/sda2 0
