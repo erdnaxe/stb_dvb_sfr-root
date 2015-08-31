@@ -25,6 +25,19 @@ que j'ai très légèrement modifié pour fonctionner sur cet appareil.
 
 ## Etape 0 : Avertissement
 
+```
+/*
+ * Your warranty is now void.
+ *
+ * We are not responsible for bricked devices, dead SD cards,
+ * thermonuclear war, or you getting fired because the alarm app failed. Please
+ * do some research if you have any concerns about features included in this ROM
+ * before flashing it! YOU are choosing to make these modifications, and if
+ * you point the finger at us for messing up your device, we will laugh at you.
+ *
+ */
+```
+
 Ce script a été testé sur mon propre décodeur, et marche très bien.
 Mais il se peut que sur votre décodeur, la configuration du stockage soit différente et mène ainsi à un brick lors du flash.
 
@@ -54,9 +67,6 @@ Ensuite vérifier que "**adb shell mount**" contient bien :
 
 Si le nombre après mmcblk0p change, alors **NE FLASHER SURTOUT PAS**,
 car le script s'installerait alors autre pas que sur le système Android.
-
-*En cas de brick, je ne suis pas responsable. Bla, bla... Mais sachez que si vous ne démarrez plus sur Android,
-je ne connais aucune méthode pour retourner dans la recovery et flasher le firmware de base.*
 
 ## Etape 1 : préparation d'une clé USB et boot en recovery
 
